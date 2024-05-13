@@ -376,7 +376,6 @@ function mainDiv() {
                     }
                     else {
 
-                        console.log("not_in_cart")
                         var productDiv3 = document.getElementById('productDetailDiv3' + product.productId)
                         productDiv3.innerHTML = ''
                         var productAddBtn = document.createElement('button')
@@ -566,8 +565,9 @@ function mainDiv() {
 
 //     }
 // }
+
 function showProductsCard2() {
-    console.log("called")
+
     // var todel = document.getElementById('')
     var productCardsDiv = document.getElementById('productCardsDiv')
     productCardsDiv.innerHTML = '';
@@ -644,7 +644,7 @@ function showProductsCard2() {
                 const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
                 const isInCart = cartItems.some(item => item.productId === product.productId);
                 if (isInCart) {
-                    console.log("in_cart")
+
                     const productCounter = document.createElement('div');
                     productCounter.id = 'productCounter' + product.productId;
                     productCounter.className = 'productCounter';
@@ -671,10 +671,10 @@ function showProductsCard2() {
                     productCounter.appendChild(decQuantityBtn)
                     productCounter.appendChild(countQuantity)
                     productCounter.appendChild(incQuantityBtn)
-                   
-                  
 
-                   
+
+
+
 
                     incQuantityBtn.addEventListener('click', function () {
                         var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -720,7 +720,7 @@ function showProductsCard2() {
                 }
                 else {
 
-                    console.log("not_in_cart")
+
                     var productAddBtn = document.createElement('button')
                     productAddBtn.id = 'productAddBtn' + product.productId
                     productAddBtn.className = 'productAddBtn'
@@ -812,7 +812,6 @@ function updateCartDisplay(cartItems) {
                 deleteOneBtn.innerText = 'REMOVE'
 
                 deleteOneBtn.addEventListener('click', function () {
-
                     var cart = JSON.parse(localStorage.getItem('cart')) || [];
                     const productIdToRemove = item.productId
                     const updatedCart = cart.filter(item => item.productId !== productIdToRemove);
@@ -820,16 +819,12 @@ function updateCartDisplay(cartItems) {
                     var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
                     updateCartDisplay(cartItems)
                     showProductsCard2()
-
-
                 })
-
 
                 eachItemDiv.appendChild(itemName);
                 eachItemDiv.appendChild(itemQuantity);
                 eachItemDiv.appendChild(itemTotal);
                 eachItemDiv.appendChild(deleteOneBtn)
-
                 cartItemDiv.appendChild(eachItemDiv)
                 cartContainer.appendChild(cartItemDiv);
 
@@ -850,7 +845,6 @@ function updateCartDisplay(cartItems) {
                 updateCartDisplay(cartItems)
                 showProductsCard2()
             })
-
 
         } else {
 
